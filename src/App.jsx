@@ -86,13 +86,13 @@ function App() {
         </div>
       }
       {showTask == "2" &&
-        <div className='text-gray-800 shadow-md  rounded-md p-5 flex flex-col gap-6 w-[600px]'>
+        <div className='text-gray-800  bg-white  shadow-md  rounded-md p-5 flex flex-col gap-6 w-[600px]'>
           <h1 className=' text-xl font-bold text-center tracking-wide'>All Tasks (History)</h1>
           {showAllTask.length > 0 ? showAllTask : <span className='text-center'>There is no task</span>}
         </div>
       }
       {showTask == "3" &&
-        <div className='text-gray-800 shadow-md rounded-md p-5 flex flex-col gap-6 w-[600px]'>
+        <div className='text-gray-800  bg-white  shadow-md rounded-md p-5 flex flex-col gap-6 w-[600px]'>
           <h1 className=' text-xl font-bold text-center tracking-wide'>Finished Task</h1>
           {allFinishedTask.length > 0 ? allFinishedTask : <span className='text-center'>nothing has finished yet</span>}
         </div>
