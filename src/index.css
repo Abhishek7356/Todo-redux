@@ -1,13 +1,25 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,300;1,400&family=Kdam+Thmor+Pro&family=Montserrat:ital,wght@0,300;0,400;0,800;1,800&family=Open+Sans:wght@500&family=Raleway:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400&family=Roboto&family=Urbanist:ital,wght@0,100;0,200;0,300;1,300;1,400&family=Vina+Sans&display=swap');
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+.todo::before{
+    content:'';
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    background-image: url('https://strattonamenities.com/wp-content/uploads/2019/06/To-do-list-980x653.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .7;
+    padding: 20px;
+    /* background-color: #ffffff83; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::-webkit-scrollbar{
+    display: none;
 }
