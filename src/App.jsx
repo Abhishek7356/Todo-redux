@@ -43,9 +43,9 @@ function App() {
     return (
       <div className='flex w-full text-gray-100 justify-between items-center rounded-md px-5 py-3 bg-gray-600'>
         <h2 className='font-bold text-md w-[450px]'>{item}</h2>
-        <div className='flex gap-4'>
-          <i onClick={() => handleUpdate(item)} class="fa-solid py-1 px-3 hover:bg-slate-200 rounded-sm hover:text-black duration-150 cursor-pointer fa-pen-to-square text-xl"></i>
-          <i onClick={() => handleFinishedTask(item)} class="fa-solid py-1 px-3 hover:bg-slate-200 rounded-sm hover:text-black duration-150 cursor-pointer fa-calendar-check text-xl"></i>
+        <div className='flex gap-1'>
+          <i onClick={() => handleUpdate(item)} class="fa-solid py-1 px-1 md:px-3 hover:bg-slate-200 rounded-sm hover:text-black duration-150 cursor-pointer fa-pen-to-square text-xl"></i>
+          <i onClick={() => handleFinishedTask(item)} class="fa-solid py-1 px-1 md:px-3 hover:bg-slate-200 rounded-sm hover:text-black duration-150 cursor-pointer fa-calendar-check text-xl"></i>
         </div>
       </div>
     )
@@ -67,14 +67,14 @@ function App() {
   })
 
   return (
-    <div style={{ minHeight: '100vh' }} className=" relative bg-slate-100 flex  gap-3 flex-col items-center pt-32">
-      <div className=' w-[600px] flex justify-end gap-1'>
-        <button onClick={() => setShowTask('1')} className='py-1 rounded-full px-4 hover:bg-blue-500 hover:text-white flex-1 text-blue-500 duration-150 bg-transparent border-2 border-blue-500  font-bold '>TO DO</button>
-        <button onClick={() => setShowTask('2')} className='py-1 rounded-full px-4 hover:bg-blue-500 hover:text-white flex-1 text-blue-500 duration-150 bg-transparent border-2 border-blue-500  font-bold '>TASK HISTORY</button>
-        <button onClick={() => setShowTask('3')} className='py-1 rounded-full px-4 hover:bg-blue-500 hover:text-white flex-1 text-blue-500 duration-150 bg-transparent border-2 border-blue-500  font-bold '>FINISHED TASK</button>
+    <div style={{ minHeight: '100vh' }} className=" px-1 relative bg-slate-100 flex  gap-3 w-[100vw] flex-col items-center pt-32">
+      <div className=' w-full md:w-[600px] flex justify-end gap-1'>
+        <button onClick={() => setShowTask('1')} className='py-1 rounded-full px-4 hover:bg-blue-500 hover:text-white flex-1 text-blue-500 duration-150 bg-transparent border-2 border-blue-500  md:font-bold text-sm md:text-lg'>TO DO</button>
+        <button onClick={() => setShowTask('2')} className='py-1 rounded-full px-4 hover:bg-blue-500 hover:text-white flex-1 text-blue-500 duration-150 bg-transparent border-2 border-blue-500  md:font-bold text-sm md:text-lg'>TASK HISTORY</button>
+        <button onClick={() => setShowTask('3')} className='py-1 rounded-full px-4 hover:bg-blue-500 hover:text-white flex-1 text-blue-500 duration-150 bg-transparent border-2 border-blue-500  md:font-bold text-sm md:text-lg'>FINISHED TASK</button>
       </div>
       {showTask == "1" &&
-        <div className='text-gray-800 border bg-white shadow-md  rounded-md p-5 flex flex-col gap-6 w-[600px]'>
+        <div className='text-gray-800 border bg-white shadow-md  rounded-md p-5 flex flex-col gap-6 w-full md:w-[600px]'>
           <h1 className=' text-xl font-bold text-center tracking-wide'>Get Things Done</h1>
           <div className='flex border-2 rounded-full border-gray-300'>
             <input onChange={(e) => setTask(e.target.value)} value={task} className='px-5 outline-none py-3 flex-1 bg-transparent' type="text" placeholder='What is the task today?' />
@@ -86,13 +86,13 @@ function App() {
         </div>
       }
       {showTask == "2" &&
-        <div className='text-gray-800  bg-white  shadow-md  rounded-md p-5 flex flex-col gap-6 w-[600px]'>
+        <div className='text-gray-800  bg-white  shadow-md  rounded-md p-5 flex flex-col gap-6 w-full md:w-[600px]'>
           <h1 className=' text-xl font-bold text-center tracking-wide'>All Tasks (History)</h1>
           {showAllTask.length > 0 ? showAllTask : <span className='text-center'>There is no task</span>}
         </div>
       }
       {showTask == "3" &&
-        <div className='text-gray-800  bg-white  shadow-md rounded-md p-5 flex flex-col gap-6 w-[600px]'>
+        <div className='text-gray-800  bg-white  shadow-md rounded-md p-5 flex flex-col gap-6 w-full md:w-[600px]'>
           <h1 className=' text-xl font-bold text-center tracking-wide'>Finished Task</h1>
           {allFinishedTask.length > 0 ? allFinishedTask : <span className='text-center'>nothing has finished yet</span>}
         </div>
